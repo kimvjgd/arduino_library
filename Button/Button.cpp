@@ -31,3 +31,19 @@ void Button::check()
     }
   }
 }
+
+void Button::attachInterrupt(button_callback_t callback, int mode)
+{
+  ::attachInterrupt(digitalPinToInterrupt(pin), callback, mode);
+  t1 = millis();
+}
+
+bool Button::debounce()
+{
+  unsigned long t2 = millis();
+  if ((t2 - t1) < 200)
+    return false;
+
+  t1 = t2;
+  return true;
+}

@@ -13,12 +13,15 @@ class Button
 protected:
     int pin;
     button_callback_t callback;
+    unsigned long t1;
 
 public:
     Button(int pin);
     void setCallback(button_callback_t callback);
     int read();
     void check();
+    void attachInterrupt(button_callback_t callback, int mode = FALLING);
+    bool debounce();
 
 private:
 };

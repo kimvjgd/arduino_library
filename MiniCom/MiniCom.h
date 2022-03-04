@@ -21,6 +21,10 @@ public:
     void init();
     void run();
 
+    // lcd 제어
+    void onLcd() { lcd.backlight(); }
+    void offLcd() { lcd.noBacklight(); }
+
     int setInterval(unsigned long interval, timer_callback f);
     SimpleTimer &getTimer() { return timer; }
 

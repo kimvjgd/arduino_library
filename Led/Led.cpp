@@ -4,12 +4,7 @@
 Led::Led(int pin) : pin(pin) // 멤버변수(지역매개변수)
 {
   // 지역변수 -> 멤버변수 -> 전역변수
-
   pinMode(pin, OUTPUT);
-}
-
-Led::~Led()
-{
 }
 
 void Led::on()
@@ -27,7 +22,6 @@ void Led::toggle()
   int v = !digitalRead(pin); // 현재 출력 값 읽기
   digitalWrite(pin, v);
 }
-
 void Led::blink(int delay_time)
 {
   toggle();
@@ -36,7 +30,6 @@ void Led::blink(int delay_time)
     delay(delay_time);
   }
 }
-
 void Led::setValue(int value)
 {
   digitalWrite(pin, value);

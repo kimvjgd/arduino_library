@@ -13,7 +13,6 @@ protected:
 
 public:
     Led(int pin); // 생성자
-    ~Led();       // 소멸자
 
     void on();
     void off();
